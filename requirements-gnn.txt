@@ -1,0 +1,6 @@
+# Install PyTorch for your OS/Python/CPU-CUDA setup first:
+# https://pytorch.org/get-started/locally/
+# Then install a compatible PyTorch Geometric build:
+# https://pytorch-geometric.readthedocs.io/
+torch
+torch-geometric
