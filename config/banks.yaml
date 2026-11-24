@@ -1,0 +1,13 @@
+project:
+  name: "PSX Banking Risk and Return Forecasting"
+  timezone: "Asia/Karachi"
+data:
+  start_date: "2023-10-01"
+  end_date: "2026-10-31"
+  analysis_start: "2023-11-01"
+  analysis_end: "2026-10-31"
+  source: "psxdata (third-party; verify quality and terms)"
+banks: [UBL, HBL, MEBL, MCB, BAHL, NBP, FABL, BAFL, ABL, AKBL]
+features:
+  rolling_correlation_months: 6
+  annualize_realized_volatility: false
