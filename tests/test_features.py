@@ -31,10 +31,10 @@ def test_monthly_aggregation():
 def test_realized_volatility_excludes_cross_month_return():
     monthly = daily_to_monthly(sample())
 
-    # February has exactly one within-month return: log(13 / 12).
-    # Its sample standard deviation is undefined, so monthly volatility is NaN.
-    assert pd.isna(monthly.loc[1, "realized_volatility"])
+    # February's only within-month return is log(13 / 12).
+    expected = abs(np.log(13 / 12))
     assert monthly.loc[1, "daily_return_count"] == 1
+    assert np.isclose(monthly.loc[1, "realized_volatility"], expected)
 
 
 def test_next_month_targets():
